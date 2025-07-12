@@ -109,6 +109,22 @@
         </p>
 
         <div class="tools-grid">
+          <!-- Learning Guide Card -->
+          <div class="tool-card learning-guide" @click="navigateTo('/learning-guide')">
+            <div class="card-content">
+              <div class="card-icon">📚</div>
+              <div class="card-text">
+                <h3>학습 가이드</h3>
+                <p>기초부터 실습까지 단계별 학습 가이드</p>
+                <div class="tool-features">
+                  <span class="feature-tag">학습 순서</span>
+                  <span class="feature-tag">코드 예제</span>
+                  <span class="feature-tag">디버깅 팁</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Requirements Card -->
           <div class="tool-card requirements" @click="navigateTo('/requirements')">
             <div class="card-content">
@@ -423,6 +439,16 @@ const showModalTest = async () => {
   overflow: hidden;
 }
 
+.tool-card.learning-guide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+}
+
 .tool-card.requirements::before {
   content: '';
   position: absolute;
@@ -456,6 +482,10 @@ const showModalTest = async () => {
 .tool-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card.learning-guide:hover {
+  border-color: #4f46e5;
 }
 
 .tool-card.requirements:hover {
@@ -589,7 +619,7 @@ const showModalTest = async () => {
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
   }
 

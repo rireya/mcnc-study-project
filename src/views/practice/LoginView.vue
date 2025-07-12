@@ -34,7 +34,72 @@
 </template>
 
 <script setup lang="ts">
-// TODO
+// TODO: 아래 주석을 참고하여 로그인 기능을 구현해보세요!
+
+import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { useModal } from '@/stores/modal'
+// import { localFetch } from '@/api/localFetch'
+
+const router = useRouter()
+const { alert } = useModal()
+
+// TODO: 폼 데이터 reactive 객체 생성
+// const form = reactive({
+//   username: '',
+//   password: ''
+// })
+
+// TODO: 에러 메시지를 위한 reactive 객체 생성  
+// const errors = reactive({
+//   username: '',
+//   password: ''
+// })
+
+// TODO: 로딩 상태 관리
+// const isLoading = ref(false)
+
+// TODO: 폼 유효성 검사 함수 구현
+// const validateForm = () => {
+//   // 에러 초기화
+//   // 아이디 검증
+//   // 비밀번호 검증
+//   // 유효성 검사 결과 반환
+// }
+
+// TODO: 로그인 처리 함수 구현
+// const handleLogin = async () => {
+//   // 유효성 검사
+//   // API 호출
+//   // 성공 시 대시보드로 이동
+//   // 실패 시 에러 메시지 표시
+// }
+
+// TODO: input 이벤트 처리 함수들 구현
+// const handleInputFocus = (event: Event) => {
+//   // inp_box에 active 클래스 추가
+// }
+
+// const handleInputBlur = (event: Event) => {
+//   // 값이 없으면 inp_box에서 active 클래스 제거
+// }
+
+// TODO: 입력값 삭제 함수 구현
+// const clearInput = (field: string) => {
+//   // 해당 필드 값 초기화
+// }
+
+// TODO: 비밀번호 표시/숨김 함수 구현
+// const togglePasswordVisibility = () => {
+//   // 비밀번호 input type을 text/password로 토글
+// }
+
+console.log('💡 로그인 화면 구현 가이드:')
+console.log('1. localFetch API를 사용하여 /login 엔드포인트 호출')
+console.log('2. 폼 유효성 검사 구현')
+console.log('3. 로딩 상태 관리')
+console.log('4. 에러 처리 및 사용자 피드백')
+console.log('5. 성공 시 대시보드로 라우팅')
 </script>
 
 <style scoped lang="scss">
