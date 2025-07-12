@@ -35,9 +35,9 @@
           <dl>
             <dd>
               <div class="form_row">
-                <div class="inp_box "> <!-- input focused or has value : add class "active" -->
+                <div class="inp_box active"> <!-- input focused or has value : add class "active" -->
                   <div class="inp"><input type="text" id="" placeholder="제목/내용을 검색하세요" /></div>
-                  <button type="button" class="btn_inp_text"><span>input text</span></button>
+                  <button type="button" class="btn_inp_del"><span>Delete input text</span></button>
                 </div>
                 <button type="button" class="btn_search01"><span>Search</span></button>
               </div>
@@ -110,5 +110,7 @@
 .tit {
   font-size: .9375rem !important;
   color: var(--normal);
+  margin-top: 0px;
+  line-height: 18px;
 }
 </style>

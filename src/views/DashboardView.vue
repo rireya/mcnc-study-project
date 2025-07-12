@@ -16,7 +16,7 @@
           <span class="section-badge">Practice Screens</span>
         </h2>
         <p class="section-description">
-          직접 구현해보세요! 이 화면들은 퍼블리싱만 완성되어 있고, 스크립트 로직은 여러분이 구현하는 실습용 화면입니다.
+          이 화면들은 퍼블리싱만 완성되어 있고, 스크립트 로직은 여러분이 구현하는 실습용 화면입니다.
         </p>
 
         <div class="practice-grid">
@@ -109,6 +109,22 @@
         </p>
 
         <div class="tools-grid">
+          <!-- Requirements Card -->
+          <div class="tool-card requirements" @click="navigateTo('/requirements')">
+            <div class="card-content">
+              <div class="card-icon">📋</div>
+              <div class="card-text">
+                <h3>실습 요구사항</h3>
+                <p>각 화면별 구현 기능 가이드</p>
+                <div class="tool-features">
+                  <span class="feature-tag">구현 가이드</span>
+                  <span class="feature-tag">개발 팁</span>
+                  <span class="feature-tag">단계별 설명</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- API Guide Card -->
           <div class="tool-card api-guide" @click="navigateTo('/api-guide')">
             <div class="card-content">
@@ -407,6 +423,16 @@ const showModalTest = async () => {
   overflow: hidden;
 }
 
+.tool-card.requirements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f093fb, #f5576c);
+}
+
 .tool-card.api-guide::before {
   content: '';
   position: absolute;
@@ -430,6 +456,10 @@ const showModalTest = async () => {
 .tool-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card.requirements:hover {
+  border-color: #f093fb;
 }
 
 .tool-card.api-guide:hover {
@@ -559,7 +589,7 @@ const showModalTest = async () => {
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 

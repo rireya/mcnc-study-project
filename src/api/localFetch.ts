@@ -127,7 +127,7 @@ export async function localFetch(
       }
 
       case '/list': {
-        const { pageNumber = 1, keyword = '', category } = body
+        const { pageNumber = 1, pageSize = 3, keyword = '', category } = body
         const allPosts = Array.from(boardMap.values())
 
         let filtered = allPosts.filter((post) =>
@@ -142,7 +142,7 @@ export async function localFetch(
 
         filtered.sort((a, b) => b.regDate.localeCompare(a.regDate))
 
-        const PAGE_SIZE = 3
+        const PAGE_SIZE = pageSize
         const totalCount = filtered.length
         const start = (pageNumber - 1) * PAGE_SIZE
         const paged = filtered.slice(start, start + PAGE_SIZE)

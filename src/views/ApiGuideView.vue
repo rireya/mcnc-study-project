@@ -3,6 +3,9 @@
     <!-- Header -->
     <header class="guide-header">
       <div class="header-content">
+        <button class="back-btn" @click="goBack">
+          ← 대시보드로
+        </button>
         <h1>📘 localFetch API 가이드</h1>
         <p>서버 없이 fetch 스타일로 API 테스트가 가능한 Mock API 도구</p>
       </div>
@@ -294,6 +297,10 @@ const currentApi = computed(() => {
 })
 
 // 메서드
+const goBack = () => {
+  router.push('/')
+}
+
 const selectApi = (endpoint: string) => {
   selectedApi.value = endpoint
   inputData.value = {}
@@ -413,7 +420,7 @@ onMounted(() => {
 .guide-header {
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 12px 16px;
+  padding: 16px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -422,48 +429,39 @@ onMounted(() => {
 .header-content {
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
 }
 
 .back-btn {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 16px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
-  z-index: 1001;
-  white-space: nowrap;
+  margin-bottom: 12px;
 }
 
 .back-btn:hover {
-  transform: translateY(-50%) translateY(-2px);
+  transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .guide-header h1 {
-  margin: 0;
+  margin: 0 0 8px 0;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  line-height: 1.2;
-  padding: 0 80px;
 }
 
 .guide-header p {
-  display: none;
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .guide-container {
@@ -866,31 +864,15 @@ onMounted(() => {
   }
 
   .guide-header {
-    padding: 14px 20px;
-  }
-
-  .header-content {
-    min-height: 48px;
-  }
-
-  .back-btn {
-    padding: 8px 16px;
-    font-size: 0.85rem;
-    border-radius: 18px;
+    padding: 20px 24px;
   }
 
   .guide-header h1 {
-    font-size: 1.3rem;
-    padding: 0 100px;
+    font-size: 1.6rem;
   }
 
   .guide-header p {
-    display: block;
-    margin: 4px 0 0 0;
-    color: #666;
-    font-size: 0.85rem;
-    padding: 0 100px;
-    line-height: 1.3;
+    font-size: 1rem;
   }
 
   .api-buttons {
@@ -922,30 +904,14 @@ onMounted(() => {
 @media (min-width: 1024px) {
   .guide-container {
     max-width: 1200px;
+    padding: 40px 32px;
   }
 
-  .guide-header {
-    padding: 16px 24px;
-  }
-
-  .header-content {
-    min-height: 52px;
-  }
-
-  .back-btn {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-    border-radius: 20px;
-  }
-
-  .guide-header h1 {
-    font-size: 1.5rem;
-    padding: 0 120px;
-  }
-
-  .guide-header p {
-    font-size: 0.9rem;
-    padding: 0 120px;
+  .test-section,
+  .data-management-section,
+  .storage-section,
+  .guide-section {
+    padding: 40px 36px;
   }
 
   .api-buttons {

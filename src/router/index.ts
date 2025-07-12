@@ -38,6 +38,11 @@ const router = createRouter({
       name: 'apiGuide',
       component: () => import('../views/ApiGuideView.vue'),
     },
+    {
+      path: '/requirements',
+      name: 'requirements',
+      component: () => import('../views/RequirementsView.vue'),
+    },
   ],
 })
 
