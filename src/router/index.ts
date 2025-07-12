@@ -5,11 +5,38 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'dashboard',
+      component: () => import('../views/DashboardView.vue'),
+    },
+    {
+      path: '/login',
       name: 'login',
-      // component: () => import('../views/LoginView.vue'),
+      component: () => import('../views/LoginView.vue'),
+    },
+    {
+      path: '/list',
+      name: 'list',
       component: () => import('../views/ListView.vue'),
-      // component: () => import('../views/DetailView.vue'),
-      // component: () => import('../views/PostView.vue'),
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: () => import('../views/DetailView.vue'),
+    },
+    {
+      path: '/post',
+      name: 'post',
+      component: () => import('../views/PostView.vue'),
+    },
+    {
+      path: '/update',
+      name: 'update',
+      component: () => import('../views/UpdateView.vue'),
+    },
+    {
+      path: '/api-guide',
+      name: 'apiGuide',
+      component: () => import('../views/ApiGuideView.vue'),
     },
   ],
 })

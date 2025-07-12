@@ -4,7 +4,7 @@
     <header class="headerWrap border">
       <!-- title bar -->
       <div class="titleBar">
-        <h1 class="tt"><strong>게시글 등록</strong></h1>
+        <h1 class="tt"><strong>게시글 수정</strong></h1>
         <div class="title_btn ">
           <button type="button" class="btn_head_prev"><span>대시보드로</span></button>
         </div>
@@ -23,7 +23,7 @@
         </dl>
         <dl>
           <dt>작성일</dt>
-          <dd><strong>9999-12-21</strong></dd>
+          <dd><strong>2025-07-12</strong></dd>
         </dl>
       </div>
       <!-- //작성자 정보 -->
@@ -36,7 +36,7 @@
             <dt><em>분류</em></dt>
             <dd>
               <select>
-                <option value="code">label</option>
+                <option value="notice" selected>공지</option>
                 <option value="code">label</option>
               </select>
             </dd>
@@ -48,12 +48,12 @@
         <div class="write_form">
           <dl>
             <dt><em>제목</em></dt>
-            <dd><input type="text" placeholder="제목을 입력하세요." /></dd>
+            <dd><input type="text" placeholder="제목을 입력하세요." value="게시글 제목" /></dd>
           </dl>
           <dl>
             <dt>내용</dt>
             <dd>
-              <textarea rows="5" cols="50" placeholder="내용을 입력하세요."></textarea>
+              <textarea rows="10" cols="50" placeholder="내용을 입력하세요.">게시글 내용</textarea>
             </dd>
           </dl>
         </div>
@@ -67,7 +67,7 @@
     <footer class="footerWrap">
       <div class="foot_btn">
         <button type="button" class="btn02"><span>취소</span></button>
-        <button type="button" class="btn01"><span>등록</span></button>
+        <button type="button" class="btn01"><span>수정</span></button>
       </div>
     </footer>
     <!-- //footer -->

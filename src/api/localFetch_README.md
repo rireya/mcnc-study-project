@@ -56,14 +56,19 @@ if (response.ok) {
 
 ### 🔐 `/login`
 
-- 기능: 로그인 및 처음 등록
+- 로그인 및 최초 등록
 - 입력: `{ userId, password }`
 - 출력: `{ userId }`
 
+### 📁 `/category`
+
+- 카테고리 목록 조회
+- 출력: `[{ code, label }]`
+
 ### 📄 `/list`
 
-- 기능: 게시글 목록 조회 (검색 + 페이지네이션)
-- 입력: `{ pageNumber, keyword }`
+- 게시글 목록 조회 (검색 + 페이지네이션 + 카테고리 필터)
+- 입력: `{ pageNumber, keyword, category }`
 - 출력:
 
 ```json
@@ -71,31 +76,42 @@ if (response.ok) {
   "pageNumber": 1,
   "pageSize": 3,
   "totalCount": 5,
-  "list": [ { ...게시글 } ]
+  "list": [
+    {
+      "boardSeq": "1720512345678",
+      "title": "공지사항",
+      "contents": "내용입니다",
+      "categoryCode": "notice",
+      "categoryLabel": "공지",
+      "userId": "admin",
+      "regDate": "20250710 160000",
+      "modDate": "20250710 160000"
+    }
+  ]
 }
 ```
 
 ### 📌 `/get`
 
-- 기능: 게시글 상세 조회
+- 게시글 상세 조회
 - 입력: `{ boardSeq }`
-- 출력: `{ boardSeq, title, contents, userId, regDate, modDate }`
+- 출력: 위와 동일한 단일 게시글 객체 (`categoryCode`, `categoryLabel` 포함)
 
 ### 📝 `/post`
 
-- 기능: 게시글 등록
-- 입력: `{ title, contents, userId }`
+- 게시글 등록
+- 입력: `{ title, contents?, userId, category }`
 - 출력: `{ boardSeq }`
 
 ### ✏️ `/update`
 
-- 기능: 게시글 수정 (작성자만 가능)
-- 입력: `{ boardSeq, title, contents, userId }`
+- 게시글 수정 (작성자만 가능)
+- 입력: `{ boardSeq, title, contents, userId, category }`
 - 출력: `{}`
 
 ### ❌ `/delete`
 
-- 기능: 게시글 삭제 (작성자만 가능)
+- 게시글 삭제 (작성자만 가능)
 - 입력: `{ boardSeq, userId }`
 - 출력: `{}`
 
@@ -108,6 +124,7 @@ if (response.ok) {
 - 검색은 제목 + 내용 포함 조건
 - 정렬은 등록일자 기준 최신순 내림차순
 - 저장소 키 이름: `loginMap`, `boardMap`
+- 카테고리는 code만 저장, 응답 시 label도 함께 포함 (`categoryCode`, `categoryLabel`)
 
 ---
 
