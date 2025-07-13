@@ -75,5 +75,11 @@
 </template>
 
 <script setup lang="ts">
-// TODO
+console.log('💡 게시글 수정 화면 구현 가이드:')
+console.log('1. URL 파라미터에서 게시글 ID 추출')
+console.log('2. 기존 게시글 데이터 조회 및 폼에 로드')
+console.log('3. 폼 유효성 검사 구현')
+console.log('4. localFetch API를 사용하여 /update 엔드포인트 호출')
+console.log('5. 에러 메시지 표시 및 처리')
+console.log('6. 성공 시 상세 페이지로 이동')
 </script>
